@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "https://live-chat-app-backend-production.up.railway.app/api/$1"
+      }
+    ]
+}
+  
