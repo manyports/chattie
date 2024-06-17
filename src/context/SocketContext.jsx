@@ -15,7 +15,8 @@ export const SocketContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (authUser) {
-			const socket = io("https://live-chat-app-backend-production.up.railway.app/", {
+			const socket = io("https://live-chat-app-backend-production.up.railway.app/",  {
+				transports : ['websocket'],
 				query: {
 					userId: authUser._id,
 				},
