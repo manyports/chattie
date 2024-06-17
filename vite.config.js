@@ -6,7 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://live-chat-app-backend-production.up.railway.app/',
-    },
-  },
-})
+      "/api": {
+        target: "http://localhost:8080",
+      }
+    }
+  }
+});

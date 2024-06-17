@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSocketContext } from "../context/SocketContext";
 import useChat from "../zustand/useChat";
 import toast from "react-hot-toast";
 
@@ -10,7 +11,7 @@ const useGetMessages = () => {
 		const getMessages = async () => {
 			setLoading(true);
 			try {
-				const res = await fetch(`/api/${selectedChat._id}`);
+				const res = await fetch(`/api/messages/${selectedChat._id}`);
 				const data = await res.json();
 				if (data.error) throw new Error(data.error);
 				setMessages(data);

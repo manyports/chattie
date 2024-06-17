@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (authUser) {
-			const socket = io("https://live-chat-app-backend-production.up.railway.app/", {
+			const socket = io("http://localhost:8080", {
 				query: {
 					userId: authUser._id,
 				},
@@ -25,7 +25,7 @@ export const SocketContextProvider = ({ children }) => {
 
 			socket.on("getOnlineUsers", (users) => {
 				setOnlineUsers(users);
-			});
+			});  
 
             socket.on('newMessage', (newMessage) => {
                 setMessages(prevMessages => [...prevMessages, newMessage]);
