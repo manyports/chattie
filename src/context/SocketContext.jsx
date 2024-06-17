@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (authUser) {
-			const socket = io("http://localhost:8080", {
+			const socket = io("https://live-chat-app-backend-production.up.railway.app/", {
 				query: {
 					userId: authUser._id,
 				},
